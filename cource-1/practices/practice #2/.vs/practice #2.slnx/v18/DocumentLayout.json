@@ -3,12 +3,40 @@
   "WorkspaceRootPath": "D:\\code theory and practice\\portfolio\\cource-1\\practices\\practice #2\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{99A47AA7-9FD4-4A7E-9BAA-CD8B669442B2}|practice #2\\practice #2.csproj|d:\\code theory and practice\\portfolio\\cource-1\\practices\\practice #2\\practice #2\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{99A47AA7-9FD4-4A7E-9BAA-CD8B669442B2}|practice #2\\practice #2.csproj|solutionrelative:practice #2\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{DE16E246-802A-B1FE-69C6-A72A85C41EFF}|practice #2\\practice #2.csproj|d:\\code theory and practice\\portfolio\\cource-1\\practices\\practice #2\\practice #2\\textbook (step 3).cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DE16E246-802A-B1FE-69C6-A72A85C41EFF}|practice #2\\practice #2.csproj|solutionrelative:practice #2\\textbook (step 3).cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{99A47AA7-9FD4-4A7E-9BAA-CD8B669442B2}|practice #2\\practice #2.csproj|d:\\code theory and practice\\portfolio\\cource-1\\practices\\practice #2\\practice #2\\ilibrarymanagement (step 5).cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{99A47AA7-9FD4-4A7E-9BAA-CD8B669442B2}|practice #2\\practice #2.csproj|solutionrelative:practice #2\\ilibrarymanagement (step 5).cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{DE16E246-802A-B1FE-69C6-A72A85C41EFF}|practice #2\\practice #2.csproj|d:\\code theory and practice\\portfolio\\cource-1\\practices\\practice #2\\practice #2\\reader (step 4).cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DE16E246-802A-B1FE-69C6-A72A85C41EFF}|practice #2\\practice #2.csproj|solutionrelative:practice #2\\reader (step 4).cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DE16E246-802A-B1FE-69C6-A72A85C41EFF}|practice #2\\practice #2.csproj|d:\\code theory and practice\\portfolio\\cource-1\\practices\\practice #2\\practice #2\\publication(step 7).cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DE16E246-802A-B1FE-69C6-A72A85C41EFF}|practice #2\\practice #2.csproj|solutionrelative:practice #2\\publication(step 7).cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DE16E246-802A-B1FE-69C6-A72A85C41EFF}|practice #2\\practice #2.csproj|d:\\code theory and practice\\portfolio\\cource-1\\practices\\practice #2\\practice #2\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DE16E246-802A-B1FE-69C6-A72A85C41EFF}|practice #2\\practice #2.csproj|solutionrelative:practice #2\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DE16E246-802A-B1FE-69C6-A72A85C41EFF}|practice #2\\practice #2.csproj|d:\\code theory and practice\\portfolio\\cource-1\\practices\\practice #2\\practice #2\\ilibrarymanagement (step 5).cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DE16E246-802A-B1FE-69C6-A72A85C41EFF}|practice #2\\practice #2.csproj|solutionrelative:practice #2\\ilibrarymanagement (step 5).cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DE16E246-802A-B1FE-69C6-A72A85C41EFF}|practice #2\\practice #2.csproj|d:\\code theory and practice\\portfolio\\cource-1\\practices\\practice #2\\practice #2\\fictionbook(step 3).cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DE16E246-802A-B1FE-69C6-A72A85C41EFF}|practice #2\\practice #2.csproj|solutionrelative:practice #2\\fictionbook(step 3).cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DE16E246-802A-B1FE-69C6-A72A85C41EFF}|practice #2\\practice #2.csproj|d:\\code theory and practice\\portfolio\\cource-1\\practices\\practice #2\\practice #2\\book (step 2).cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DE16E246-802A-B1FE-69C6-A72A85C41EFF}|practice #2\\practice #2.csproj|solutionrelative:practice #2\\book (step 2).cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DE16E246-802A-B1FE-69C6-A72A85C41EFF}|practice #2\\practice #2.csproj|d:\\code theory and practice\\portfolio\\cource-1\\practices\\practice #2\\practice #2\\publishing house (step 1).cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DE16E246-802A-B1FE-69C6-A72A85C41EFF}|practice #2\\practice #2.csproj|solutionrelative:practice #2\\publishing house (step 1).cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DE16E246-802A-B1FE-69C6-A72A85C41EFF}|practice #2\\practice #2.csproj|d:\\code theory and practice\\portfolio\\cource-1\\practices\\practice #2\\practice #2\\reservation (independent task).cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DE16E246-802A-B1FE-69C6-A72A85C41EFF}|practice #2\\practice #2.csproj|solutionrelative:practice #2\\reservation (independent task).cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -18,11 +46,96 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Reservation (independent task).cs",
+              "DocumentMoniker": "D:\\code theory and practice\\portfolio\\cource-1\\practices\\practice #2\\practice #2\\Reservation (independent task).cs",
+              "RelativeDocumentMoniker": "practice #2\\Reservation (independent task).cs",
+              "ToolTip": "D:\\code theory and practice\\portfolio\\cource-1\\practices\\practice #2\\practice #2\\Reservation (independent task).cs",
+              "RelativeToolTip": "practice #2\\Reservation (independent task).cs",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAwwBYAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-17T13:54:04.728Z"
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 1,
+              "Title": "Reader (step 4).cs",
+              "DocumentMoniker": "D:\\code theory and practice\\portfolio\\cource-1\\practices\\practice #2\\practice #2\\Reader (step 4).cs",
+              "RelativeDocumentMoniker": "practice #2\\Reader (step 4).cs",
+              "ToolTip": "D:\\code theory and practice\\portfolio\\cource-1\\practices\\practice #2\\practice #2\\Reader (step 4).cs",
+              "RelativeToolTip": "practice #2\\Reader (step 4).cs",
+              "ViewState": "AgIAAAUAAAAAAAAAAAAQwB0AAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-17T13:52:11.319Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "FictionBook(step 3).cs",
+              "DocumentMoniker": "D:\\code theory and practice\\portfolio\\cource-1\\practices\\practice #2\\practice #2\\FictionBook(step 3).cs",
+              "RelativeDocumentMoniker": "practice #2\\FictionBook(step 3).cs",
+              "ToolTip": "D:\\code theory and practice\\portfolio\\cource-1\\practices\\practice #2\\practice #2\\FictionBook(step 3).cs",
+              "RelativeToolTip": "practice #2\\FictionBook(step 3).cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-17T13:50:47.05Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Textbook (step 3).cs",
+              "DocumentMoniker": "D:\\code theory and practice\\portfolio\\cource-1\\practices\\practice #2\\practice #2\\Textbook (step 3).cs",
+              "RelativeDocumentMoniker": "practice #2\\Textbook (step 3).cs",
+              "ToolTip": "D:\\code theory and practice\\portfolio\\cource-1\\practices\\practice #2\\practice #2\\Textbook (step 3).cs",
+              "RelativeToolTip": "practice #2\\Textbook (step 3).cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-17T13:49:30.374Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Publication(step 7).cs",
+              "DocumentMoniker": "D:\\code theory and practice\\portfolio\\cource-1\\practices\\practice #2\\practice #2\\Publication(step 7).cs",
+              "RelativeDocumentMoniker": "practice #2\\Publication(step 7).cs",
+              "ToolTip": "D:\\code theory and practice\\portfolio\\cource-1\\practices\\practice #2\\practice #2\\Publication(step 7).cs",
+              "RelativeToolTip": "practice #2\\Publication(step 7).cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-17T13:49:03.382Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Book (step 2).cs",
+              "DocumentMoniker": "D:\\code theory and practice\\portfolio\\cource-1\\practices\\practice #2\\practice #2\\Book (step 2).cs",
+              "RelativeDocumentMoniker": "practice #2\\Book (step 2).cs",
+              "ToolTip": "D:\\code theory and practice\\portfolio\\cource-1\\practices\\practice #2\\practice #2\\Book (step 2).cs",
+              "RelativeToolTip": "practice #2\\Book (step 2).cs",
+              "ViewState": "AgIAACMAAAAAAAAAAAAawC4AAAALAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-17T13:48:31.503Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Publishing house (step 1).cs",
+              "DocumentMoniker": "D:\\code theory and practice\\portfolio\\cource-1\\practices\\practice #2\\practice #2\\Publishing house (step 1).cs",
+              "RelativeDocumentMoniker": "practice #2\\Publishing house (step 1).cs",
+              "ToolTip": "D:\\code theory and practice\\portfolio\\cource-1\\practices\\practice #2\\practice #2\\Publishing house (step 1).cs",
+              "RelativeToolTip": "practice #2\\Publishing house (step 1).cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-17T13:47:52.341Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
               "Title": "ILibraryManagement (step 5).cs",
               "DocumentMoniker": "D:\\code theory and practice\\portfolio\\cource-1\\practices\\practice #2\\practice #2\\ILibraryManagement (step 5).cs",
               "RelativeDocumentMoniker": "practice #2\\ILibraryManagement (step 5).cs",
@@ -30,12 +143,11 @@
               "RelativeToolTip": "practice #2\\ILibraryManagement (step 5).cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-17T13:32:03.649Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-04-17T13:32:03.649Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 3,
               "Title": "Program.cs",
               "DocumentMoniker": "D:\\code theory and practice\\portfolio\\cource-1\\practices\\practice #2\\practice #2\\Program.cs",
               "RelativeDocumentMoniker": "practice #2\\Program.cs",
@@ -43,8 +155,7 @@
               "RelativeToolTip": "practice #2\\Program.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAgwCMAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-17T13:27:12.409Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-04-17T13:27:12.409Z"
             }
           ]
         }
