@@ -1,0 +1,37 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\code theory and practice\\portfolio\\cource-1\\homeworks\\Homework #1\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{11554E0C-4BDC-4723-822A-DDD893E9DEA9}|Homework #1\\Homework #1.csproj|d:\\code theory and practice\\portfolio\\cource-1\\homeworks\\homework #1\\homework #1\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{11554E0C-4BDC-4723-822A-DDD893E9DEA9}|Homework #1\\Homework #1.csproj|solutionrelative:homework #1\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\code theory and practice\\portfolio\\cource-1\\homeworks\\Homework #1\\Homework #1\\Program.cs",
+              "RelativeDocumentMoniker": "Homework #1\\Program.cs",
+              "ToolTip": "D:\\code theory and practice\\portfolio\\cource-1\\homeworks\\Homework #1\\Homework #1\\Program.cs*",
+              "RelativeToolTip": "Homework #1\\Program.cs*",
+              "ViewState": "AgIAAFUAAAAAAAAAAAA6wE8AAAAEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-27T15:07:35.292Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
