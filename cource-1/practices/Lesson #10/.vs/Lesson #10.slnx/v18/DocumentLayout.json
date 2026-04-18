@@ -1,9 +1,9 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "D:\\code theory and practice\\portfolio\\cource-1\\homeworks\\Lesson #10\\",
+  "WorkspaceRootPath": "D:\\code theory and practice\\portfolio\\cource-1\\practices\\Lesson #10\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{D18A4C8E-7365-1DB2-E6A4-054F1AA0DE8E}|Lesson #10\\Lesson #10.csproj|d:\\code theory and practice\\portfolio\\cource-1\\homeworks\\lesson #10\\lesson #10\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{D18A4C8E-7365-1DB2-E6A4-054F1AA0DE8E}|Lesson #10\\Lesson #10.csproj|d:\\code theory and practice\\portfolio\\cource-1\\practices\\lesson #10\\lesson #10\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{D18A4C8E-7365-1DB2-E6A4-054F1AA0DE8E}|Lesson #10\\Lesson #10.csproj|solutionrelative:lesson #10\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
@@ -20,11 +20,11 @@
               "$type": "Document",
               "DocumentIndex": 0,
               "Title": "Program.cs",
-              "DocumentMoniker": "D:\\code theory and practice\\portfolio\\cource-1\\homeworks\\Lesson #10\\Lesson #10\\Program.cs",
+              "DocumentMoniker": "D:\\code theory and practice\\portfolio\\cource-1\\practices\\Lesson #10\\Lesson #10\\Program.cs",
               "RelativeDocumentMoniker": "Lesson #10\\Program.cs",
-              "ToolTip": "D:\\code theory and practice\\portfolio\\cource-1\\homeworks\\Lesson #10\\Lesson #10\\Program.cs",
+              "ToolTip": "D:\\code theory and practice\\portfolio\\cource-1\\practices\\Lesson #10\\Lesson #10\\Program.cs",
               "RelativeToolTip": "Lesson #10\\Program.cs",
-              "ViewState": "AgIAAFUAAAAAAAAAAAAawF4AAAADAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAF4AAAADAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-03-13T13:31:58.367Z",
               "EditorCaption": ""
