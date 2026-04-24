@@ -1,0 +1,67 @@
+﻿using System;
+using System.IO;
+using System.Collections.Generic;
+////#1
+//string path = "notes.txt";
+
+//File.WriteAllLines(path, new[]
+//{
+//    "Привет",
+//    "Как дела?",
+//    "Что делаешь?"
+//});
+
+//File.AppendAllText(path, Environment.NewLine + "Погнали гулять");
+
+//Console.WriteLine("Содержимое файла:");
+//Console.WriteLine(File.ReadAllText(path));
+
+//Console.Write("Удалить файл? (y/n): ");
+//if (Console.ReadLine()?.Trim().ToLowerInvariant() == "y")
+//{
+//    File.Delete(path);
+//    Console.WriteLine("Файл удалён.");
+//}
+////#2
+//string dir = "data";
+//Directory.CreateDirectory(dir);
+//File.WriteAllText(Path.Combine(dir, "a.txt"), "A");
+//File.WriteAllText(Path.Combine(dir, "b.txt"), "BBBB");
+//File.WriteAllText(Path.Combine(dir, "b.md"), "CCC");
+
+//foreach (var f in Directory.GetFiles(dir, "*.txt"))
+//{
+//    var info = new FileInfo(f);
+//    Console.WriteLine($"{info.Name} -- {info.Length} байт");
+//}
+////#3
+//Console.Write("Путь к файлу: ");
+//string? src = Console.ReadLine();
+
+//if (!string.IsNullOrWhiteSpace(src) && File.Exists(src))
+//{
+//    string dir = Path.GetDirectoryName(src)!;
+//    string name = Path.GetFileName(src);
+//    string bak = Path.Combine(dir, name + ".bak");
+//    File.Copy(src, bak, overwrite: true);
+//    Console.WriteLine($"Создана копия: {bak}");
+//}
+//else
+//{
+//    Console.WriteLine("Файл не найден.");
+//}
+////#4
+//string logsDir = "logs";
+//Directory.CreateDirectory(logsDir);
+
+//string file = Path.Combine(logsDir, $"{DateTime.Now:yyyy-MM-dd}.log");
+//File.AppendAllText(file, $"{DateTime.Now:O} :: событие\n");
+//int days = 7;
+//foreach (var f in Directory.GetFiles(logsDir, "*.log"))
+//{
+//    var info = new FileInfo(f);
+//    if (info.CreationTimeUtc < DateTime.UtcNow.AddDays(-days))
+//    {
+//        info.Delete();
+//    }
+//}
