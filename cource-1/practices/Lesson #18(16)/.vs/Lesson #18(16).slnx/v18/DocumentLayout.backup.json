@@ -1,0 +1,37 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\code theory and practice\\portfolio\\cource-1\\practices\\Lesson #18(16)\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{81A3B1C1-A06A-2F36-245E-0D795728893D}|Lesson #18(16)\\Lesson #18(16).csproj|d:\\code theory and practice\\portfolio\\cource-1\\practices\\lesson #18(16)\\lesson #18(16)\\program(step 2-5,step 8-11).cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{81A3B1C1-A06A-2F36-245E-0D795728893D}|Lesson #18(16)\\Lesson #18(16).csproj|solutionrelative:lesson #18(16)\\program(step 2-5,step 8-11).cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Program(step 2-5,step 8-11).cs",
+              "DocumentMoniker": "D:\\code theory and practice\\portfolio\\cource-1\\practices\\Lesson #18(16)\\Lesson #18(16)\\Program(step 2-5,step 8-11).cs",
+              "RelativeDocumentMoniker": "Lesson #18(16)\\Program(step 2-5,step 8-11).cs",
+              "ToolTip": "D:\\code theory and practice\\portfolio\\cource-1\\practices\\Lesson #18(16)\\Lesson #18(16)\\Program(step 2-5,step 8-11).cs",
+              "RelativeToolTip": "Lesson #18(16)\\Program(step 2-5,step 8-11).cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAmAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-25T14:25:52.588Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
