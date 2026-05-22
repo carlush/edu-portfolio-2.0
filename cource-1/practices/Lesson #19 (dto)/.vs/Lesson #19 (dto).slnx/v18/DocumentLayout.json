@@ -1,0 +1,88 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\User\\source\\repos\\Lesson #19 (dto)\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{E8EFB8B8-1E19-4965-A455-EFE6740E89E4}|Lesson #19 (dto)\\Lesson #19 (dto).csproj|c:\\users\\user\\source\\repos\\lesson #19 (dto)\\lesson #19 (dto)\\customerdtos\\customerpublicdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E8EFB8B8-1E19-4965-A455-EFE6740E89E4}|Lesson #19 (dto)\\Lesson #19 (dto).csproj|solutionrelative:lesson #19 (dto)\\customerdtos\\customerpublicdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E8EFB8B8-1E19-4965-A455-EFE6740E89E4}|Lesson #19 (dto)\\Lesson #19 (dto).csproj|c:\\users\\user\\source\\repos\\lesson #19 (dto)\\lesson #19 (dto)\\customerdtos\\customerprofiledto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E8EFB8B8-1E19-4965-A455-EFE6740E89E4}|Lesson #19 (dto)\\Lesson #19 (dto).csproj|solutionrelative:lesson #19 (dto)\\customerdtos\\customerprofiledto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E8EFB8B8-1E19-4965-A455-EFE6740E89E4}|Lesson #19 (dto)\\Lesson #19 (dto).csproj|c:\\users\\user\\source\\repos\\lesson #19 (dto)\\lesson #19 (dto)\\customerdtos\\registercustomerdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E8EFB8B8-1E19-4965-A455-EFE6740E89E4}|Lesson #19 (dto)\\Lesson #19 (dto).csproj|solutionrelative:lesson #19 (dto)\\customerdtos\\registercustomerdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E8EFB8B8-1E19-4965-A455-EFE6740E89E4}|Lesson #19 (dto)\\Lesson #19 (dto).csproj|c:\\users\\user\\source\\repos\\lesson #19 (dto)\\lesson #19 (dto)\\customer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E8EFB8B8-1E19-4965-A455-EFE6740E89E4}|Lesson #19 (dto)\\Lesson #19 (dto).csproj|solutionrelative:lesson #19 (dto)\\customer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "CustomerPublicDto.cs",
+              "DocumentMoniker": "C:\\Users\\User\\source\\repos\\Lesson #19 (dto)\\Lesson #19 (dto)\\CustomerDtos\\CustomerPublicDto.cs",
+              "RelativeDocumentMoniker": "Lesson #19 (dto)\\CustomerDtos\\CustomerPublicDto.cs",
+              "ToolTip": "C:\\Users\\User\\source\\repos\\Lesson #19 (dto)\\Lesson #19 (dto)\\CustomerDtos\\CustomerPublicDto.cs",
+              "RelativeToolTip": "Lesson #19 (dto)\\CustomerDtos\\CustomerPublicDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB0AAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-22T13:38:18.455Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "CustomerProfileDto.cs",
+              "DocumentMoniker": "C:\\Users\\User\\source\\repos\\Lesson #19 (dto)\\Lesson #19 (dto)\\CustomerDtos\\CustomerProfileDto.cs",
+              "RelativeDocumentMoniker": "Lesson #19 (dto)\\CustomerDtos\\CustomerProfileDto.cs",
+              "ToolTip": "C:\\Users\\User\\source\\repos\\Lesson #19 (dto)\\Lesson #19 (dto)\\CustomerDtos\\CustomerProfileDto.cs",
+              "RelativeToolTip": "Lesson #19 (dto)\\CustomerDtos\\CustomerProfileDto.cs",
+              "ViewState": "AgIAABMAAAAAAAAAAAAgwCcAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-22T13:37:41.811Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "RegisterCustomerDto.cs",
+              "DocumentMoniker": "C:\\Users\\User\\source\\repos\\Lesson #19 (dto)\\Lesson #19 (dto)\\CustomerDtos\\RegisterCustomerDto.cs",
+              "RelativeDocumentMoniker": "Lesson #19 (dto)\\CustomerDtos\\RegisterCustomerDto.cs",
+              "ToolTip": "C:\\Users\\User\\source\\repos\\Lesson #19 (dto)\\Lesson #19 (dto)\\CustomerDtos\\RegisterCustomerDto.cs",
+              "RelativeToolTip": "Lesson #19 (dto)\\CustomerDtos\\RegisterCustomerDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-22T13:37:09.067Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Customer.cs",
+              "DocumentMoniker": "C:\\Users\\User\\source\\repos\\Lesson #19 (dto)\\Lesson #19 (dto)\\Customer.cs",
+              "RelativeDocumentMoniker": "Lesson #19 (dto)\\Customer.cs",
+              "ToolTip": "C:\\Users\\User\\source\\repos\\Lesson #19 (dto)\\Lesson #19 (dto)\\Customer.cs",
+              "RelativeToolTip": "Lesson #19 (dto)\\Customer.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAqAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-22T13:35:49.213Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
