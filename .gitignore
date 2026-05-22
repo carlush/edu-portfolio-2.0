@@ -1,7 +1,11 @@
+# Кеш и настройки Visual Studio
+.vs/
+
+# Артефакты сборки (компиляции)
 bin/
 obj/
 
-# Настройки IDE (Visual Studio, Rider, VS Code)
-/.vscode
-/.idea
-/.vs
+# Локальные юзерские файлы
+*.user
+*.userosscache
+*.sln.docstates
