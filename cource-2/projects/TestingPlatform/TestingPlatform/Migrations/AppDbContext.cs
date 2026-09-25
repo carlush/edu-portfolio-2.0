@@ -1,7 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using practice.Models;
 
-namespace practice.Data;
+namespace TestingPlatform.Data;
 
 public class AppDbContext : DbContext
 {

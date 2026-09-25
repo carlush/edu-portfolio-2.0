@@ -1,12 +1,15 @@
-﻿namespace practice.Models;
+﻿using System.Text.Json.Serialization;
+using practice.Enums;
+
+namespace practice.Models;
 
 /// <summary>
-/// Студент
+/// Пользователь
 /// </summary>
-public class Student
+public class User
 {
     /// <summary>
-    /// Идентификатор студента
+    /// Идентификатор пользователя
     /// </summary>
     public int Id { get; set; }
 
@@ -36,22 +39,18 @@ public class Student
     public string LastName { get; set; }
 
     /// <summary>
-    /// Номер телефона
+    /// Роль (менеджер или студент)
     /// </summary>
-    public string Phone { get; set; }
+    public UserRole Role { get; set; }
 
     /// <summary>
-    /// Ссылка на профиль студента в ВК
+    /// Время создания
     /// </summary>
-    public string VkProfileLink { get; set; }
+    public DateTimeOffset CreatedAt { get; set; } = DateTimeOffset.UtcNow;
 
+    [JsonIgnore]
     /// <summary>
-    /// Дата создания пользователя
+    /// Если роль студент - должна быть запись в таблице Student
     /// </summary>
-    public DateTimeOffset CreatedAt { get; set; }
-    /// <summary>
-    /// Студент
-    /// </summary>
-        public int UserId { get; set; }
-        public User User { get; set; }
-    }
+    public Student? Student { get; set; }
+}

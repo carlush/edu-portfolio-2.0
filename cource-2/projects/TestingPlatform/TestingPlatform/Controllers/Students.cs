@@ -1,11 +1,12 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using practice.Data;
+using Microsoft.EntityFrameworkCore;
 using practice.Models;
-
-namespace practice.Controllers;
+using TestingPlatform;
+using TestingPlatform.Data;
+namespace TestingPlatform.Controllers;
 
 [ApiController]
-[Route("api/[controller]")] // базовый маршрут: /api/students
+[Route("api/[controller]")]
 public class StudentsController : ControllerBase
 {
     private readonly AppDbContext _db;
@@ -19,28 +20,28 @@ public class StudentsController : ControllerBase
     public IActionResult GetAllStudents()
     {
         var students = _db.Students.ToList();
-        return Ok(students); // 200
+        return Ok(students);
     }
 
     [HttpGet("{id:int}")]
     public IActionResult GetStudentById(int id)
     {
         if (id <= 0)
-            return BadRequest("Некорректный id"); // 400
+            return BadRequest("Некорректный id");
 
         var student = _db.Students.FirstOrDefault(s => s.Id == id);
         if (student is null)
-            return NotFound(); // 404
+            return NotFound();
 
-        return Ok(student); // 200
+        return Ok(student);
     }
 
     [HttpPost]
     public IActionResult CreateStudent([FromBody] Student student)
     {
-        var emailExists = _db.Students.Where(s => s.Email == student.Email).ToList();
+        var emailExists = _db.Students.Where(s => s.User.Email == student.User.Email).ToList();
         if (emailExists.Any())
-            return Conflict("Такой email уже используется"); // 409
+            return Conflict("Такой email уже используется");
 
         _db.Students.Add(student);
         _db.SaveChanges();
@@ -49,23 +50,17 @@ public class StudentsController : ControllerBase
     }
 
     [HttpPut("{id:int}")]
-    public IActionResult UpdateStudent([FromRoute] int id, [FromBody] Student student)
+    public IActionResult UpdateStudent([FromBody] Student student)
     {
-        if (id != student.Id)
-            return BadRequest("id в пути и в теле запроса не совпадают");
-
-        if (id <= 0)
-            return BadRequest("Некорректный id");
-
-        var exists = _db.Students.Any(s => s.Id == id);
-        if (!exists)
+        var exists = _db.Students.FirstOrDefault(s => s.Id == student.Id);
+        if (exists == default)
             return NotFound();
 
-        var emailExists = _db.Students.FirstOrDefault(s => s.Email == student.Email && s.Id != id);
-        if (emailExists is not null)
-            return Conflict("Такой email уже используется"); //409
+        var emailInUse = _db.Students.Any(s => s.User.Email == student.User.Email && s.Id != student.Id);
+        if (emailInUse)
+            return Conflict("Такой email уже используется");
 
-        _db.Students.Update(student);
+        _db.Entry(student).State = EntityState.Modified;
         _db.SaveChanges();
 
         return NoContent();
