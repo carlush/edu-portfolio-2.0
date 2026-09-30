@@ -9,6 +9,7 @@ namespace TestingPlatform.Controllers;
 [Route("api/[controller]")]
 public class StudentsController : ControllerBase
 {
+
     private readonly AppDbContext _db;
 
     public StudentsController(AppDbContext db)
@@ -69,6 +70,9 @@ public class StudentsController : ControllerBase
     [HttpDelete("{id:int}")]
     public IActionResult DeleteStudent(int id)
     {
+
+
+
         var student = _db.Students.Find(id);
         if (student is null)
             return NotFound();
@@ -78,4 +82,5 @@ public class StudentsController : ControllerBase
 
         return NoContent();
     }
+
 }

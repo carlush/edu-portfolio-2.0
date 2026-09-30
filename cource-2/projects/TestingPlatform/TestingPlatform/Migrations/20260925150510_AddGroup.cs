@@ -59,7 +59,6 @@ namespace TestingPlatform.Migrations
                         onDelete: ReferentialAction.Cascade);
                 });
 
-            // 1. Сначала добавляем двух пользователей (Id: 1 и Id: 2)
             migrationBuilder.InsertData(
                 table: "User",
                 columns: new[] { "Id", "CreatedAt", "Email", "FirstName", "LastName", "Login", "MiddleName", "Role" },
@@ -69,7 +68,6 @@ namespace TestingPlatform.Migrations
                     { 2, new DateTimeOffset(new DateTime(2026, 6, 9, 16, 30, 0, 0, DateTimeKind.Unspecified), new TimeSpan(0, 3, 0, 0, 0)), "maria@mail.com", "Мария", "Иванова", "maria", "Ивановна", 1 }
                 });
 
-            // 2. Теперь студенты ссылаются на РЕАЛЬНЫХ юзеров: Иван -> UserId: 1, Мария -> UserId: 2
             migrationBuilder.InsertData(
                 table: "Students",
                 columns: new[] { "Id", "CreatedAt", "Email", "FirstName", "LastName", "Login", "MiddleName", "Phone", "UserId", "VkProfileLink" },
@@ -86,7 +84,6 @@ namespace TestingPlatform.Migrations
                 unique: true);
         }
 
-        /// <inheritdoc />
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
