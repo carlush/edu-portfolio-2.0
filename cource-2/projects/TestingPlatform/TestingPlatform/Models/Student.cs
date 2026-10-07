@@ -1,57 +1,12 @@
-﻿namespace practice.Models;
-
-/// <summary>
-/// Студент
-/// </summary>
-public class Student
-{
-    /// <summary>
-    /// Идентификатор студента
-    /// </summary>
+﻿namespace TestingPlatform.Models;
+public class Student {
     public int Id { get; set; }
-
-    /// <summary>
-    /// Логин
-    /// </summary>
-    public string Login { get; set; }
-
-    /// <summary>
-    /// Email
-    /// </summary>
-    public string Email { get; set; }
-
-    /// <summary>
-    /// Имя
-    /// </summary>
-    public string FirstName { get; set; }
-
-    /// <summary>
-    /// Отчество
-    /// </summary>
-    public string? MiddleName { get; set; }
-
-    /// <summary>
-    /// Фамилия
-    /// </summary>
-    public string LastName { get; set; }
-
-    /// <summary>
-    /// Номер телефона
-    /// </summary>
-    public string Phone { get; set; }
-
-    /// <summary>
-    /// Ссылка на профиль студента в ВК
-    /// </summary>
-    public string VkProfileLink { get; set; }
-
-    /// <summary>
-    /// Дата создания пользователя
-    /// </summary>
-    public DateTimeOffset CreatedAt { get; set; }
-    /// <summary>
-    /// Студент
-    /// </summary>
-        public int UserId { get; set; }
-        public User User { get; set; }
-    }
+    public string Phone { get; set; } = null!;
+    public string VkProfileLink { get; set; } = null!;
+    public int UserId { get; set; }
+    public User User { get; set; } = null!;
+    public List<Group> Groups { get; set; } = new();
+    public List<Test> Tests { get; set; } = new();
+    public List<Attempt> Attempts { get; set; } = new();
+    public List<TestResult> TestResults { get; set; } = new();
+}

@@ -1,21 +1,7 @@
-﻿/// <summary>
-/// Курс
-/// </summary>
-public class Course
-{
-    /// <summary>
-    /// Идентификатор
-    /// </summary>
+﻿namespace TestingPlatform.Models;
+public class Course {
     public int Id { get; set; }
-
-    /// <summary>
-    /// Название курса
-    /// </summary>
-    public string Name { get; set; }
-
-    /// <summary>
-    /// Список групп внутри курса
-    /// </summary>
-    public List<Group> Groups { get; set; }
+    public string Name { get; set; } = null!;
+    public List<Group> Groups { get; set; } = new();
+    public List<Test> Tests { get; set; } = new();
 }
-

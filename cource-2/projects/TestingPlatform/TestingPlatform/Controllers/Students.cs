@@ -1,9 +1,8 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using practice.Models;
-using TestingPlatform;
-using TestingPlatform.Data;
-namespace TestingPlatform.Controllers;
+using TestingPlatform.Models;
+using TestingPlatform.Enums;
+using TestingPlatform.Migrations;
 
 [ApiController]
 [Route("api/[controller]")]

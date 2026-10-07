@@ -1,19 +1,7 @@
-﻿/// <summary>
-/// Направление
-/// </summary>
-public class Direction
-{
-    /// <summary>
-    /// Идентификатор
-    /// </summary>
+﻿namespace TestingPlatform.Models;
+public class Direction {
     public int Id { get; set; }
-
-    /// <summary>
-    /// Название направления
-    /// </summary>
-    public string Name { get; set; }
-    ///<summary>
-    ///Список групп внутри курса
-    /// <summary>
-    public List<Group> Groups { get; set; }
+    public string Name { get; set; } = null!;
+    public List<Group> Groups { get; set; } = new();
+    public List<Test> Tests { get; set; } = new();
 }

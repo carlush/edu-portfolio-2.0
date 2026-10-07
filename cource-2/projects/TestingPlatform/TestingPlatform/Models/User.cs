@@ -1,56 +1,14 @@
-﻿using System.Text.Json.Serialization;
-using practice.Enums;
-
-namespace practice.Models;
-
-/// <summary>
-/// Пользователь
-/// </summary>
-public class User
-{
-    /// <summary>
-    /// Идентификатор пользователя
-    /// </summary>
+﻿using TestingPlatform.Enums;
+namespace TestingPlatform.Models;
+public class User {
     public int Id { get; set; }
-
-    /// <summary>
-    /// Логин
-    /// </summary>
-    public string Login { get; set; }
-
-    /// <summary>
-    /// Email
-    /// </summary>
-    public string Email { get; set; }
-
-    /// <summary>
-    /// Имя
-    /// </summary>
-    public string FirstName { get; set; }
-
-    /// <summary>
-    /// Отчество
-    /// </summary>
+    public string Login { get; set; } = null!;
+    public string PasswordHash { get; set; } = null!;
+    public string Email { get; set; } = null!;
+    public string FirstName { get; set; } = null!;
     public string? MiddleName { get; set; }
-
-    /// <summary>
-    /// Фамилия
-    /// </summary>
-    public string LastName { get; set; }
-
-    /// <summary>
-    /// Роль (менеджер или студент)
-    /// </summary>
+    public string LastName { get; set; } = null!;
     public UserRole Role { get; set; }
-
-    /// <summary>
-    /// Время создания
-    /// </summary>
-    public DateTimeOffset CreatedAt { get; set; } = DateTimeOffset.UtcNow;
-
-    [JsonIgnore]
-    /// <summary>
-    /// Если роль студент - должна быть запись в таблице Student
-    /// </summary>
+    public DateTimeOffset CreatedAt { get; set; }
     public Student? Student { get; set; }
 }
