@@ -1,75 +1,57 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
+using TestingPlatform.Domain.Models;
+using TestingPlatform.Infrastructure;
+using TestingPlatform.Infrastructure.Repositories;
 using TestingPlatform.Migrations;
-using TestingPlatform.Models;
 
-namespace TestingPlatform.Controllers;
+namespace practice.Controllers;
 
 [ApiController]
 [Route("api/[controller]")]
-public class Groups : ControllerBase
+public class GroupsController : ControllerBase
 {
-    private readonly AppDbContext _context;
+    private readonly GroupRepository _repository;
 
-    public Groups(AppDbContext context)
+    public GroupsController(AppDbContext appDbContext)
     {
-        _context = context;
+        _repository = new GroupRepository(appDbContext);
     }
 
     [HttpGet]
-    public async Task<IActionResult> GetAll()
+    public IActionResult GetAllGroups()
     {
-        var groups = await _context.Groups
-            .Include(g => g.Direction)
-            .Include(g => g.Course)
-            .Include(g => g.Project)
-            .ToListAsync();
-
+        var groups = _repository.GetAll();
         return Ok(groups);
     }
 
-    [HttpGet("{id}")]
-    public async Task<IActionResult> GetById(int id)
+    [HttpGet("{id:int}")]
+    public IActionResult GetGroupById(int id)
     {
-        var group = await _context.Groups
-            .Include(g => g.Direction)
-            .Include(g => g.Course)
-            .Include(g => g.Project)
-            .FirstOrDefaultAsync(g => g.Id == id);
-
-        if (group == null)
-            return NotFound("Группа не найдена");
+        var group = _repository.GetById(id);
 
         return Ok(group);
     }
 
     [HttpPost]
-    public async Task<IActionResult> Create(string name, int directionId, int courseId, int projectId)
+    public IActionResult CreateGroup([FromBody] Group group)
     {
-        var group = new Group
-        {
-            Name = name,
-            DirectionId = directionId,
-            CourseId = courseId,
-            ProjectId = projectId
-        };
+        var id = _repository.Create(group);
 
-        _context.Groups.Add(group);
-        await _context.SaveChangesAsync();
-
-        return Ok(new { message = "Группа создана", id = group.Id });
+        return StatusCode(StatusCodes.Status201Created, new { Id = id });
     }
 
-    [HttpDelete("{id}")]
-    public async Task<IActionResult> Delete(int id)
+    [HttpPut("{id:int}")]
+    public IActionResult UpdateGroup([FromBody] Group group)
     {
-        var group = await _context.Groups.FindAsync(id);
-        if (group == null)
-            return NotFound("Группа не найдена");
+        _repository.Update(group);
+        return NoContent();
+    }
 
-        _context.Groups.Remove(group);
-        await _context.SaveChangesAsync();
+    [HttpDelete("{id:int}")]
+    public IActionResult DeleteGroup(int id)
+    {
+        _repository.Delete(id);
 
-        return Ok("Группа удалена");
+        return NoContent();
     }
 }

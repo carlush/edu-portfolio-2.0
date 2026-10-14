@@ -1,3 +1,9 @@
 <Solution>
+  <Project Path="TestingPlatform.Application/TestingPlatform.Application.csproj" Id="d09d23a2-4e21-4434-bc5b-63f7750674b8" />
+  <Project Path="TestingPlatform.Domain/TestingPlatform.Domain.csproj" Id="9f4ec5b9-731b-4f2e-a5e4-d19abbfae50a" />
+  <Project Path="TestingPlatform.Infrastructure/TestingPlatform.Infrastructure.csproj" Id="35291922-e8fa-4371-ac87-f0665d1364f7" />
   <Project Path="TestingPlatform/TestingPlatform.csproj" />
+  <Properties Name="NDepend">
+    <Property Name="Project" Value="&quot;.\TestingPlatform.ndproj&quot;" />
+  </Properties>
 </Solution>
