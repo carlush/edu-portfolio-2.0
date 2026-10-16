@@ -1,5 +1,4 @@
-﻿
-using TestingPlatform.Domain.Models;
+﻿using TestingPlatform.Application.Dtos;
 
 namespace TestingPlatform.Application.Interfaces;
 
@@ -9,27 +8,27 @@ public interface IGroupRepository
     /// Получить все группы.
     /// </summary>
     /// <returns>Массив групп.</returns>
-    List<Group> GetAll();
+    List<GroupDto> GetAll();
 
     /// <summary>
     /// Получить группу по id.
     /// </summary>
     /// <param name="id">Идентификатор группы</param>
     /// <returns></returns>
-    Group GetById(int id);
+    GroupDto GetById(int id);
 
     /// <summary>
     /// Создать новую группу.
     /// </summary>
     /// <param name="group">Модель создания новой группы.</param>
     /// <returns>Идентификатор новой группы .</returns>
-    int Create(Group group);
+    int Create(GroupDto group);
 
     /// <summary>
     /// Обновить информацию о группе.
     /// </summary>
     /// <param name="group">Модель обновления группы.</param>
-    void Update(Group group);
+    void Update(GroupDto group);
 
     /// <summary>
     /// Удалить группу.
@@ -37,4 +36,3 @@ public interface IGroupRepository
     /// <param name="id">Идентификатор группы.</param>
     void Delete(int id);
 }
-
