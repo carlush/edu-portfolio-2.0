@@ -8,31 +8,32 @@ public interface IGroupRepository
     /// Получить все группы.
     /// </summary>
     /// <returns>Массив групп.</returns>
-    List<GroupDto> GetAll();
+    Task<List<GroupDto>> GetAllAsync();
 
     /// <summary>
     /// Получить группу по id.
     /// </summary>
     /// <param name="id">Идентификатор группы</param>
     /// <returns></returns>
-    GroupDto GetById(int id);
+    Task<GroupDto> GetByIdAsync(int id);
 
     /// <summary>
     /// Создать новую группу.
     /// </summary>
-    /// <param name="group">Модель создания новой группы.</param>
+    /// <param name="groupDto">Модель создания новой группы.</param>
     /// <returns>Идентификатор новой группы .</returns>
-    int Create(GroupDto group);
+    Task<int> CreateAsync(GroupDto groupDto);
 
     /// <summary>
     /// Обновить информацию о группе.
     /// </summary>
-    /// <param name="group">Модель обновления группы.</param>
-    void Update(GroupDto group);
+    /// <param name="groupDto">Модель обновления группы.</param>
+    Task UpdateAsync(GroupDto groupDto);
 
     /// <summary>
     /// Удалить группу.
     /// </summary>
     /// <param name="id">Идентификатор группы.</param>
-    void Delete(int id);
+    Task DeleteAsync(int id);
 }
+
