@@ -1,85 +1,98 @@
-﻿//using Microsoft.AspNetCore.Mvc;
-//using Microsoft.EntityFrameworkCore;
-//using TestingPlatform.Models;
-//using TestingPlatform.Enums;
-//using TestingPlatform.Migrations;
+﻿using AutoMapper;
+using Microsoft.AspNetCore.Mvc;
+using TestingPlatform.Requests.Student;
+using TestingPlatform.Application.Dtos;
+using TestingPlatform.Application.Interfaces;
+using TestingPlatform.Domain.Enums;
+using TestingPlatform.Responses.Student;
 
-//[ApiController]
-//[Route("api/[controller]")]
-//public class StudentsController : ControllerBase
-//{
+[ApiController]
+[Route("api/[controller]")]
+public class StudentsController(IStudentRepository studentRepository, IUserRepository userRepository, IMapper mapper) : ControllerBase
+{
+    /// <summary>
+    /// Получить список студентов
+    /// </summary>
+    /// <param name="groupIds">Идентификаторы групп</param>
+    /// <remarks>Если идентификаторы групп не указаны - придет полный список студентов</remarks>
+    /// <returns></returns>
+    [HttpGet]
+    public async Task<IActionResult> GetStudents()
+    {
+        var students = await studentRepository.GetAllAsync();
 
-//    private readonly AppDbContext _db;
+        return Ok(mapper.Map<IEnumerable<StudentResponse>>(students));
+    }
 
-//    public StudentsController(AppDbContext db)
-//    {
-//        _db = db;
-//    }
+    /// <summary>
+    /// Получить данные студента по Id
+    /// </summary>
+    /// <param name="id">Идентификатор студента</param>
+    /// <returns></returns>
+    [HttpGet("{id:int}")]
+    public async Task<IActionResult> GetStudentById(int id)
+    {
+        var student = await studentRepository.GetByIdAsync(id);
 
-//    [HttpGet]
-//    public IActionResult GetAllStudents()
-//    {
-//        var students = _db.Students.ToList();
-//        return Ok(students);
-//    }
+        return Ok(mapper.Map<StudentResponse>(student));
+    }
 
-//    [HttpGet("{id:int}")]
-//    public IActionResult GetStudentById(int id)
-//    {
-//        if (id <= 0)
-//            return BadRequest("Некорректный id");
+    /// <summary>
+    /// Добавить студента
+    /// </summary>
+    /// <param name="student">Модель создания студента</param>
+    /// <returns></returns>
+    [HttpPost]
+    public async Task<IActionResult> CreateStudent([FromBody] CreateStudentRequest student)
+    {
+        var userDto = new UserDto()
+        {
+            Login = student.Login,
+            Password = student.Password,
+            Email = student.Email,
+            FirstName = student.FirstName,
+            MiddleName = student.MiddleName,
+            LastName = student.LastName,
+            Role = UserRole.Student
+        };
+        var userId = await userRepository.CreateAsync(userDto);
 
-//        var student = _db.Students.FirstOrDefault(s => s.Id == id);
-//        if (student is null)
-//            return NotFound();
+        var studentDto = new StudentDto()
+        {
+            UserId = userId,
+            Phone = student.Phone,
+            VkProfileLink = student.VkProfileLink
+        };
 
-//        return Ok(student);
-//    }
+        var studentId = await studentRepository.CreateAsync(studentDto);
 
-//    [HttpPost]
-//    public IActionResult CreateStudent([FromBody] Student student)
-//    {
-//        var emailExists = _db.Students.Where(s => s.User.Email == student.User.Email).ToList();
-//        if (emailExists.Any())
-//            return Conflict("Такой email уже используется");
+        return StatusCode(StatusCodes.Status201Created, new { Id = studentId });
+    }
 
-//        _db.Students.Add(student);
-//        _db.SaveChanges();
+    /// <summary>
+    /// Обновить данные о студенте
+    /// </summary>
+    /// <param name="student">Модель обновления данных о студенте</param>
+    /// <returns></returns>
+    [HttpPut]
+    public async Task<IActionResult> UpdateStudent([FromBody] UpdateStudentRequest student)
+    {
+        await studentRepository.UpdateAsync(mapper.Map<StudentDto>(student));
 
-//        return Created();
-//    }
+        return NoContent();
+    }
 
-//    [HttpPut("{id:int}")]
-//    public IActionResult UpdateStudent([FromBody] Student student)
-//    {
-//        var exists = _db.Students.FirstOrDefault(s => s.Id == student.Id);
-//        if (exists == default)
-//            return NotFound();
+    /// <summary>
+    /// Удалить студента
+    /// </summary>
+    /// <param name="id">Идентификатор студента</param>
+    /// <returns></returns>
+    [HttpDelete("{id:int}")]
+    public async Task<IActionResult> DeleteStudent(int id)
+    {
+        await studentRepository.DeleteAsync(id);
 
-//        var emailInUse = _db.Students.Any(s => s.User.Email == student.User.Email && s.Id != student.Id);
-//        if (emailInUse)
-//            return Conflict("Такой email уже используется");
+        return NoContent();
+    }
+}
 
-//        _db.Entry(student).State = EntityState.Modified;
-//        _db.SaveChanges();
-
-//        return NoContent();
-//    }
-
-//    [HttpDelete("{id:int}")]
-//    public IActionResult DeleteStudent(int id)
-//    {
-
-
-
-//        var student = _db.Students.Find(id);
-//        if (student is null)
-//            return NotFound();
-
-//        _db.Students.Remove(student);
-//        _db.SaveChanges();
-
-//        return NoContent();
-//    }
-
-//}

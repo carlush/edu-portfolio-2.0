@@ -1,45 +1,73 @@
+using AutoMapper;
+using Microsoft.EntityFrameworkCore;
+using TestingPlatform.Application.Dtos;
 using TestingPlatform.Application.Interfaces;
 using TestingPlatform.Domain.Models;
 using TestingPlatform.Migrations;
 
 namespace TestingPlatform.Infrastructure.Repositories;
 
-public class UserRepository(AppDbContext appDbContext) : IUserRepository
+public class UserRepository(AppDbContext appDbContext, IMapper mapper) : IUserRepository
 {
-    public List<User> GetAll()
+    public async Task<IEnumerable<UserDto>> GetAllAsync()
     {
-        return appDbContext.Users.ToList();
+        var users = await appDbContext.Users.AsNoTracking().ToListAsync();
+        return mapper.Map<IEnumerable<UserDto>>(users);
     }
 
-    public User GetById(int id)
+    public async Task<UserDto> GetByIdAsync(int id)
     {
-        var user = appDbContext.Users.FirstOrDefault(u => u.Id == id);
+        var user = await appDbContext.Users
+            .AsNoTracking()
+            .FirstOrDefaultAsync(user => user.Id == id);
 
         if (user == null)
         {
             throw new Exception("Пользователь не найден.");
         }
 
-        return user;
+        return mapper.Map<UserDto>(user);
     }
 
-    public int Create(User user)
+    public async Task<int> CreateAsync(UserDto userDto)
     {
-        appDbContext.Users.Add(user);
-        appDbContext.SaveChanges();
+        var user = mapper.Map<User>(userDto);
+
+        user.FirstName = userDto.FirstName;
+        user.LastName = userDto.LastName;
+        user.MiddleName = userDto.MiddleName;
+        user.PasswordHash = userDto.Password;
+
+        await appDbContext.AddAsync(user);
+        await appDbContext.SaveChangesAsync();
 
         return user.Id;
     }
 
-    public void Update(User user)
+    public async Task UpdateAsync(UserDto userDto)
     {
-        appDbContext.Users.Update(user);
-        appDbContext.SaveChanges();
+        var user = await appDbContext.Users.FirstOrDefaultAsync(user => user.Id == userDto.Id);
+
+        if (user == null)
+        {
+            throw new Exception("Пользователь не найден.");
+        }
+
+        if (appDbContext.Users.Any(u => u.Login == userDto.Login))
+            throw new ArgumentException($"Пользователь с логином {userDto.Login} уже существует.");
+
+        // var parsedFullname = FullnameHelper.Parse(userDto.FullName);
+        user.FirstName = userDto.FirstName;
+        user.LastName = userDto.LastName;
+        user.MiddleName = userDto.MiddleName;
+        user.Role = userDto.Role;
+
+        await appDbContext.SaveChangesAsync();
     }
 
-    public void Delete(int id)
+    public async Task DeleteAsync(int id)
     {
-        var user = appDbContext.Users.FirstOrDefault(u => u.Id == id);
+        var user = await appDbContext.Users.FirstOrDefaultAsync(user => user.Id == id);
 
         if (user == null)
         {
@@ -47,6 +75,7 @@ public class UserRepository(AppDbContext appDbContext) : IUserRepository
         }
 
         appDbContext.Users.Remove(user);
-        appDbContext.SaveChanges();
+        await appDbContext.SaveChangesAsync();
     }
 }
+

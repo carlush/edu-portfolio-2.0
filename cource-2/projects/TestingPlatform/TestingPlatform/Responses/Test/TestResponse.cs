@@ -1,0 +1,19 @@
+using TestingPlatform.Domain.Enums;
+
+namespace practice.Responses.Test;
+
+public class TestResponse
+{
+    public int Id { get; set; }
+    public string Title { get; set; } = null!;
+    public string Description { get; set; } = null!;
+    public bool IsRepeatable { get; set; }
+    public TestType Type { get; set; }
+    public DateTimeOffset CreatedAt { get; set; }
+    public DateTimeOffset PublishedAt { get; set; }
+    public DateTimeOffset Deadline { get; set; }
+    public int? DurationMinutes { get; set; }
+    public bool IsPublic { get; set; }
+    public int? PassingScore { get; set; }
+    public int? MaxAttempts { get; set; }
+}

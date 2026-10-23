@@ -12,10 +12,9 @@ namespace TestingPlatform.Controllers;
 public class GroupsController(IGroupRepository groupRepository, IMapper mapper) : ControllerBase
 {
     [HttpGet]
-    public async Task<IActionResult> GetAllGroups()
+    public async Task<IActionResult> GetGroups()
     {
         var groups = await groupRepository.GetAllAsync();
-
         return Ok(mapper.Map<IEnumerable<GroupResponse>>(groups));
     }
 
@@ -23,23 +22,21 @@ public class GroupsController(IGroupRepository groupRepository, IMapper mapper) 
     public async Task<IActionResult> GetGroupById(int id)
     {
         var group = await groupRepository.GetByIdAsync(id);
-
         return Ok(mapper.Map<GroupResponse>(group));
     }
 
     [HttpPost]
-    public async Task<IActionResult> CreateGroup([FromBody] CreateGroupRequest group)
+    public async Task<IActionResult> CreateGroup([FromBody] CreateGroupRequest request)
     {
-        var id = await groupRepository.CreateAsync(mapper.Map<GroupDto>(group));
-
-        return StatusCode(StatusCodes.Status201Created, new { Id = id });
+        var groupDto = mapper.Map<GroupDto>(request);
+        var groupId = await groupRepository.CreateAsync(groupDto);
+        return StatusCode(StatusCodes.Status201Created, new { Id = groupId });
     }
 
-    [HttpPut("{id:int}")]
-    public async Task<IActionResult> UpdateGroup([FromBody] UpdateGroupRequest group)
+    [HttpPut]
+    public async Task<IActionResult> UpdateGroup([FromBody] UpdateGroupRequest request)
     {
-        await groupRepository.UpdateAsync(mapper.Map<GroupDto>(group));
-
+        await groupRepository.UpdateAsync(mapper.Map<GroupDto>(request));
         return NoContent();
     }
 
@@ -47,8 +44,6 @@ public class GroupsController(IGroupRepository groupRepository, IMapper mapper) 
     public async Task<IActionResult> DeleteGroup(int id)
     {
         await groupRepository.DeleteAsync(id);
-
         return NoContent();
     }
 }
-
