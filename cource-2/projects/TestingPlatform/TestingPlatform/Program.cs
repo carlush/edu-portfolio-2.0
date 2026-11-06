@@ -21,6 +21,7 @@ builder.Services.AddAutoMapper(cfg => cfg.AddMaps("TestingPlatform.Infrastructur
 builder.Services.AddAutoMapper(cfg => cfg.AddMaps("TestingPlatform")); builder.Services.AddScoped<IStudentRepository, StudentRepository>();
 builder.Services.AddScoped<IUserRepository, UserRepository>();
 builder.Services.AddScoped<IGroupRepository, GroupRepository>();
+builder.Services.AddScoped<ITestRepository, TestRepository>();
 var app = builder.Build();
 
 using (var scope = app.Services.CreateScope())

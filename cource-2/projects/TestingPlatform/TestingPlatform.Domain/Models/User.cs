@@ -10,6 +10,6 @@ public class User {
     public string? MiddleName { get; set; }
     public string LastName { get; set; } = null!;
     public UserRole Role { get; set; }
-    public DateTimeOffset CreatedAt { get; set; }
+    public DateTime CreatedAt { get; set; }
     public Student? Student { get; set; }
 }
