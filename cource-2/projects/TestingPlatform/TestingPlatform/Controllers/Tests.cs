@@ -4,6 +4,7 @@ using practice.Requests.Test;
 using practice.Responses.Test;
 using TestingPlatform.Application.Dtos;
 using TestingPlatform.Application.Interfaces;
+using TestingPlatform.Infrastructure.Repositories;
 
 namespace TestingPlatform.Controllers;
 
@@ -11,12 +12,6 @@ namespace TestingPlatform.Controllers;
 [Route("api/[controller]")]
 public class TestsController(ITestRepository testRepository, IMapper mapper) : ControllerBase
 {
-    [HttpGet]
-    public async Task<IActionResult> GetTests()
-    {
-        var tests = await testRepository.GetAllAsync();
-        return Ok(mapper.Map<IEnumerable<TestResponse>>(tests));
-    }
 
     [HttpGet("{id:int}")]
     public async Task<IActionResult> GetTestById(int id)
@@ -46,4 +41,5 @@ public class TestsController(ITestRepository testRepository, IMapper mapper) : C
         await testRepository.DeleteAsync(id);
         return NoContent();
     }
+
 }
