@@ -3,6 +3,7 @@ using Microsoft.EntityFrameworkCore;
 using TestingPlatform.Application.Dtos;
 using TestingPlatform.Application.Interfaces;
 using TestingPlatform.Domain.Models;
+using TestingPlatform.Infrastructure.Exceptions;
 using TestingPlatform.Migrations;
 
 namespace TestingPlatform.Infrastructure.Repositories;
@@ -22,7 +23,7 @@ public class AnswerRepository(AppDbContext appDbContext, IMapper mapper) : IAnsw
             .FirstOrDefaultAsync(a => a.Id == id);
 
         if (answer == null)
-            throw new Exception("Ответ не найден.");
+            throw new EntityNotFoundException("Ответ не найден.");
 
         return mapper.Map<AnswerDto>(answer);
     }
@@ -41,7 +42,7 @@ public class AnswerRepository(AppDbContext appDbContext, IMapper mapper) : IAnsw
         var answer = await appDbContext.Answers.FirstOrDefaultAsync(a => a.Id == answerDto.Id);
 
         if (answer == null)
-            throw new Exception("Ответ не найден.");
+            throw new EntityNotFoundException("Ответ не найден.");
 
         answer.Text = answerDto.Text;
         answer.IsCorrect = answerDto.IsCorrect;
@@ -55,7 +56,7 @@ public class AnswerRepository(AppDbContext appDbContext, IMapper mapper) : IAnsw
         var answer = await appDbContext.Answers.FirstOrDefaultAsync(a => a.Id == id);
 
         if (answer == null)
-            throw new Exception("Ответ не найден.");
+            throw new EntityNotFoundException("Ответ не найден.");
 
         appDbContext.Answers.Remove(answer);
         await appDbContext.SaveChangesAsync();

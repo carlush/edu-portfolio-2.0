@@ -3,6 +3,7 @@ using Microsoft.EntityFrameworkCore;
 using TestingPlatform.Application.Dtos;
 using TestingPlatform.Application.Interfaces;
 using TestingPlatform.Domain.Models;
+using TestingPlatform.Infrastructure.Exceptions;
 using TestingPlatform.Migrations;
 
 namespace TestingPlatform.Infrastructure.Repositories;
@@ -60,7 +61,7 @@ public class TestRepository(AppDbContext appDbContext, IMapper mapper) : ITestRe
 
         if (test == null)
         {
-            throw new Exception("Тест не найден.");
+            throw new EntityNotFoundException("Тест не найден.");
         }
 
         return mapper.Map<TestDto>(test);
@@ -79,15 +80,13 @@ public class TestRepository(AppDbContext appDbContext, IMapper mapper) : ITestRe
         return testId.Entity.Id;
     }
 
-
-
     public async Task UpdateAsync(TestDto testDto)
     {
         var test = await appDbContext.Tests.FirstOrDefaultAsync(test => test.Id == testDto.Id);
 
         if (test == null)
         {
-            throw new Exception("Тест не найден.");
+            throw new EntityNotFoundException("Тест не найден.");
         }
 
         test.Title = testDto.Title;
@@ -106,7 +105,6 @@ public class TestRepository(AppDbContext appDbContext, IMapper mapper) : ITestRe
         await appDbContext.SaveChangesAsync();
     }
 
-
     public async Task DeleteAsync(int id)
     {
         // Пытаемся найти тест по переданному идентификатору.
@@ -118,7 +116,7 @@ public class TestRepository(AppDbContext appDbContext, IMapper mapper) : ITestRe
         // Если объект не найден, выбрасываем исключение с сообщением.
         if (test == null)
         {
-            throw new Exception("Тест не найден.");
+            throw new EntityNotFoundException("Тест не найден.");
         }
 
         // Помечаем объект для удаления.
@@ -130,6 +128,7 @@ public class TestRepository(AppDbContext appDbContext, IMapper mapper) : ITestRe
         // EF Core выполнит SQL-запрос DELETE для указанной записи.
         await appDbContext.SaveChangesAsync();
     }
+
     public async Task<IEnumerable<TestDto>> GetTopRecentAsync(int count = 5)
     {
         // Формируем запрос к таблице Tests.
@@ -159,6 +158,7 @@ public class TestRepository(AppDbContext appDbContext, IMapper mapper) : ITestRe
     {
         throw new NotImplementedException();
     }
+
     private async Task RefreshPublicationStatusesAsync()
     {
         // Получаем текущее время в формате UTC (универсальное время).
@@ -218,7 +218,6 @@ public class TestRepository(AppDbContext appDbContext, IMapper mapper) : ITestRe
                 .Where(t => toUnpublishIds.Contains(t.Id))
                 .ExecuteUpdateAsync(s => s.SetProperty(t => t.IsPublic, false));
     }
-
 
     private async Task UpdateMembersTest(Test test, TestDto testDto)
     {
@@ -299,6 +298,7 @@ public class TestRepository(AppDbContext appDbContext, IMapper mapper) : ITestRe
                 test.Projects.Add(p);
         }
     }
+
     public async Task<IEnumerable<object>> GetTestCountByTypeAsync()
     {
         return await appDbContext.Tests
@@ -311,6 +311,7 @@ public class TestRepository(AppDbContext appDbContext, IMapper mapper) : ITestRe
             })
             .ToListAsync();
     }
+
     public async Task<IEnumerable<object>> GetCourseStatsAsync()
     {
         return await appDbContext.Courses
@@ -322,8 +323,9 @@ public class TestRepository(AppDbContext appDbContext, IMapper mapper) : ITestRe
                 AvgDuration = c.Tests.Average(t => (double?)t.DurationMinutes) ?? 0,
                 AvgPassingScore = c.Tests.Average(t => (double?)t.PassingScore) ?? 0
             })
-            .ToListAsync();                  // Выполнение запроса
+            .ToListAsync();                 // Выполнение запроса
     }
+
     public async Task<IEnumerable<object>> GetDirectionAveragesAsync()
     {
         return await appDbContext.Directions
@@ -337,6 +339,7 @@ public class TestRepository(AppDbContext appDbContext, IMapper mapper) : ITestRe
             .OrderByDescending(x => x.AvgPassingScore) // OrderByDescending: сортировка по убыванию среднего балла
             .ToListAsync();
     }
+
     public async Task<IEnumerable<object>> GetTestTimelineByPublicAsync()
     {
         return await appDbContext.Tests
@@ -353,13 +356,14 @@ public class TestRepository(AppDbContext appDbContext, IMapper mapper) : ITestRe
                 g.Key.IsPublic,
                 g.Key.Year,
                 g.Key.Month,
-                Count = g.Count()                                  // Count: размер группы
+                Count = g.Count()                                 // Count: размер группы
             })
-            .OrderBy(x => x.Year)                                  // OrderBy / ThenBy: сортируем по времени
+            .OrderBy(x => x.Year)                                 // OrderBy / ThenBy: сортируем по времени
             .ThenBy(x => x.Month)
-            .ThenByDescending(x => x.IsPublic)                     // В пределах месяца сначала публичные
-            .ToListAsync();                                        // Выполнение запроса
+            .ThenByDescending(x => x.IsPublic)                    // В пределах месяца сначала публичные
+            .ToListAsync();                                       // Выполнение запроса
     }
+
     public async Task<IEnumerable<object>> GetTopGroupsByTestCountAsync(int top = 10)
     {
         return await appDbContext.Tests
@@ -397,7 +401,4 @@ public class TestRepository(AppDbContext appDbContext, IMapper mapper) : ITestRe
             .Take(top)
             .ToListAsync();
     }
-
-
-
 }

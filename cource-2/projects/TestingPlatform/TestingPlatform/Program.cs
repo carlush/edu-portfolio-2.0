@@ -1,9 +1,8 @@
 using Microsoft.EntityFrameworkCore;
+using practice.Middlewares;
 using TestingPlatform.Application.Interfaces;
-using TestingPlatform.Infrastructure;
 using TestingPlatform.Infrastructure.Repositories;
 using TestingPlatform.Migrations;
-
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -17,11 +16,14 @@ builder.Services.AddSwaggerGen();
 
 builder.Services.AddScoped<IGroupRepository, GroupRepository>();
 builder.Services.AddScoped<IUserRepository, UserRepository>();
-builder.Services.AddAutoMapper(cfg => cfg.AddMaps("TestingPlatform.Infrastructure"));
-builder.Services.AddAutoMapper(cfg => cfg.AddMaps("TestingPlatform")); builder.Services.AddScoped<IStudentRepository, StudentRepository>();
-builder.Services.AddScoped<IUserRepository, UserRepository>();
-builder.Services.AddScoped<IGroupRepository, GroupRepository>();
+builder.Services.AddScoped<IStudentRepository, StudentRepository>();
 builder.Services.AddScoped<ITestRepository, TestRepository>();
+builder.Services.AddScoped<IAnswerRepository, AnswerRepository>();
+builder.Services.AddScoped<IQuestionRepository, QuestionRepository>();
+
+builder.Services.AddAutoMapper(cfg => cfg.AddMaps("TestingPlatform.Infrastructure"));
+builder.Services.AddAutoMapper(cfg => cfg.AddMaps("TestingPlatform"));
+
 var app = builder.Build();
 
 using (var scope = app.Services.CreateScope())
@@ -37,6 +39,7 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
+app.UseMiddleware<ExceptionMiddleware>();
 app.UseAuthorization();
 
 app.MapControllers();

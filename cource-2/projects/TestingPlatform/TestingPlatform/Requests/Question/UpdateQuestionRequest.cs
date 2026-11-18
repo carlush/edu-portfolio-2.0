@@ -1,0 +1,16 @@
+﻿using System.ComponentModel.DataAnnotations;
+using TestingPlatform.Domain.Enums;
+
+namespace TestingPlatform.Requests.Question;
+
+public class UpdateQuestionRequest
+{
+    [Required] public int Id { get; set; }
+    [Required] public string Text { get; set; } = null!;
+    [Required] public int Number { get; set; }
+    public string? Description { get; set; }
+    [Required] public AnswerType AnswerType { get; set; }
+    public bool IsScoring { get; set; }
+    public int? MaxScore { get; set; }
+    [Required] public int TestId { get; set; }
+}
